@@ -1,3 +1,4 @@
+
 # 🛒 E-Commerce Cart System
 
 A simple E-Commerce cart backend built with **Node.js**, **Express.js**, and **MongoDB**, with a basic HTML/CSS frontend to test cart operations like adding products, viewing cart, and checking out.
@@ -41,13 +42,11 @@ View cart
 Checkout
 
 ##Screenshots
-![image](https://github.com/user-attachments/assets/0bec8717-c48e-421a-a0f6-9464f7ace6bc)
-![image](https://github.com/user-attachments/assets/71857477-32f4-40f5-b0d2-ae643cfb9657)
-![image](https://github.com/user-attachments/assets/d0cd25e8-7356-46b8-9b61-28f82f65d0de)
-![image](https://github.com/user-attachments/assets/828238c7-0689-4525-a0ad-185f003e13c5)
-![image](https://github.com/user-attachments/assets/c35a4174-58b5-4051-9025-24c354cdfeb5)
-
-
+![image](https://github.com/user-attachments/assets/a553dea2-3275-4c16-8971-33f152784dc4)
+![image](https://github.com/user-attachments/assets/e58a8371-0915-4feb-a680-4d578dc2a831)
+![image](https://github.com/user-attachments/assets/a080fc58-5a18-4dc9-8b00-6601b76f4f2f)
+![image](https://github.com/user-attachments/assets/a14330f7-f2c5-4f6a-9ef1-dc65c4e7ff4b)
+![image](https://github.com/user-attachments/assets/a9fc225b-dc2f-40d2-8773-caf62510e2cb)
 
 
 🧠 How It Works
