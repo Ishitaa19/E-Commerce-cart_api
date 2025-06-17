@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart System</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Simple E-Commerce Cart</h1>
+
+    <div class="form-group">
+      <input type="text" id="productId" placeholder="Enter Product ID" />
+      <input type="number" id="quantity" placeholder="Quantity" min="1" />
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <button onclick="viewCart()">View Cart</button>
+    <button onclick="checkout()">Checkout</button>
+
+    <div id="cartDisplay"></div>
+  </div>
+
+  <script>
+    async function addToCart() {
+      const productId = document.getElementById("productId").value;
+      const quantity = parseInt(document.getElementById("quantity").value);
+
+      const res = await fetch("/api/cart/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productId, quantity })
+      });
+
+      const data = await res.json();
+      alert("Product added!");
+    }
+
+    async function viewCart() {
+      const res = await fetch("/api/cart");
+      const cart = await res.json();
+
+      const display = document.getElementById("cartDisplay");
+      display.innerHTML = "<h3>Cart:</h3>";
+
+      if (!cart || cart.products.length === 0) {
+        display.innerHTML += "<p>Your cart is empty</p>";
+        return;
+      }
+
+      cart.products.forEach(p => {
+        display.innerHTML += `<p>${p.productId.name} - ${p.quantity} x ₹${p.productId.price}</p>`;
+      });
+    }
+
+    async function checkout() {
+      await fetch("/api/cart/checkout", { method: "POST" });
+      alert("Checked out!");
+      viewCart();
+    }
+  </script>
+</body>
+</html>
